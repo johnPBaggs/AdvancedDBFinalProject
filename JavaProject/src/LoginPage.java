@@ -22,6 +22,15 @@ public class LoginPage extends JPanel implements ActionListener
 	
 	public LoginPage()
 	{
+		try{  //this should be placed at the very beginning of the application and should be performed only once for a run. 
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");  
+			con=DriverManager.getConnection(  
+			"jdbc:sqlserver://projectdb.cpfuslnxnggh.us-east-1.rds.amazonaws.com:1433","admin","adminpassword");  
+			//here sonoo is database name, root is username and password  
+			
+			  
+			}catch(Exception e)
+				{ System.out.println(e);} 
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		initRoleChoice();
 		initUserName();
@@ -34,21 +43,9 @@ public class LoginPage extends JPanel implements ActionListener
 		
 	}
 	
-	public void actionPerformed(ActionEvent event) {
-		try{  
-			Class.forName("com.mysql.jdbc.Driver");  
-			Connection con=DriverManager.getConnection(  
-			"jdbc:mysql://dbproject.cpfuslnxnggh.us-east-1.rds.amazonaws.com:1433","admin","adminpassword");  
-			//here sonoo is database name, root is username and password  
-			Statement stmt=con.createStatement();  
-			ResultSet rs=stmt.executeQuery("CREATE TABLE TEMP");  
-			while(rs.next())  
-			System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3));  
-			con.close();  
-			}catch(Exception e){ System.out.println(e);}  
-			
+	public void actionPerformed(ActionEvent event) {	
 		
-    }
+    	}
 	
 	
 	private void initLoginButton() {
@@ -70,7 +67,22 @@ public class LoginPage extends JPanel implements ActionListener
 
 	private void initRoleChoice()
 	{
-		String[] roleNames = {"Teacher", "Teacher Assistant", "Student"};
+		//String[] roleNames = {"Teacher", "Teacher Assistant", "Student"};
+		String[] roleNames = new String[3];
+		Statement stmt;
+		int i=0;
+		try {
+			stmt = con.createStatement();
+			ResultSet rs=stmt.executeQuery("SELECT DISTINCT role FROM TestDB.dbo.roles");  
+			
+			while(rs.next()) { 
+				System.out.println("RS:"+rs.getString(1));
+				roleNames[i++] = rs.getString(1);
+			}
+			con.close();//not sure where to place this
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		roleChoice = new JComboBox<String>(roleNames);
 		roleChoice.setMaximumSize(new Dimension(250, 250));
 	}
