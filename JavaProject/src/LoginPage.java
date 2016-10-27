@@ -38,9 +38,36 @@ public class LoginPage extends JPanel implements ActionListener
 	
 	public void actionPerformed(ActionEvent event) {	
 		
+				if(event.equals(loginButton))
+				{
+					callLoginProcedure(getLoginInformation());
+				}
+		
     	}
 	
 	
+	private void callLoginProcedure(String[] loginInformation) {
+		/*
+		 * Send Procedure
+		 * 
+		 * create a callable statement
+		 * pass in procedure name
+		 * execute the statement
+		 * get return
+		 * 
+		 */
+		
+	}
+
+	private String[] getLoginInformation() {
+		String[] array = new String[3];
+		array[0] = userName.getText();
+		array[1] = password.getSelectedText();
+		array[2] = roleChoice.getSelectedItem().toString();
+		System.out.println("userName = " + array[0] + "  password = " + array[1] + "   roleChoice = " + array[2]);
+		return array;
+	}
+
 	private void initLoginButton() {
 		loginButton = new JButton("Login");
 		loginButton.setMaximumSize(new Dimension(100, 30));
