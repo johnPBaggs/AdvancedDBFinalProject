@@ -19,18 +19,11 @@ public class LoginPage extends JPanel implements ActionListener
 	private JTextField userName;
 	private JPasswordField password;
 	private JButton loginButton;
+	private Connection con;
 	
-	public LoginPage()
+	public LoginPage(Connection con)
 	{
-		try{  //this should be placed at the very beginning of the application and should be performed only once for a run. 
-			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");  
-			con=DriverManager.getConnection(  
-			"jdbc:sqlserver://projectdb.cpfuslnxnggh.us-east-1.rds.amazonaws.com:1433","admin","adminpassword");  
-			//here sonoo is database name, root is username and password  
-			
-			  
-			}catch(Exception e)
-				{ System.out.println(e);} 
+		this.con = con;
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		initRoleChoice();
 		initUserName();
