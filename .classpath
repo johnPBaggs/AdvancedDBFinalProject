@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="JavaProject/src"/>
+	<classpathentry kind="lib" path="JavaProject/._mysql-connector.jar"/>
+	<classpathentry kind="lib" path="JavaProject/mysql-connector.jar"/>
+	<classpathentry kind="lib" path="JavaProject/sqljdbc4-2.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="JavaProject/bin"/>
+</classpath>
