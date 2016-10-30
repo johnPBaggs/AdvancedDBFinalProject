@@ -4,7 +4,11 @@ import javax.swing.JComboBox;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextField;
@@ -49,7 +53,26 @@ public class LoginPage extends JPanel implements ActionListener {
 		 * get return
 		 * 
 		 */
-		windowManager.setUpTeacherHomePage(-10, this);
+		CallableStatement cstmt = null;
+	    
+		int id = -1;
+	 
+	    try {
+	        cstmt = con.prepareCall(
+	                "{call testDB.dbo.verifyLogin(?,?,?,?)}");
+	        cstmt.registerOutParameter(1, java.sql.Types.INTEGER);
+	        cstmt.setNString(2, loginInformation[0]);
+	        cstmt.setNString(3, loginInformation[1]);
+	        cstmt.setNString(4, loginInformation[2]);
+	        cstmt.execute();
+	        id = cstmt.getInt(1);
+	    } catch (Exception ex) {System.out.println(ex);} 
+	    System.out.println("id:"+id);
+	    if(id != -1){
+	    	if(loginInformation[2].equalsIgnoreCase("teacher"))
+	    		windowManager.setUpTeacherHomePage(id, this);
+	    }
+	    	
 	}
 
 	private String[] getLoginInformation() {
@@ -77,7 +100,23 @@ public class LoginPage extends JPanel implements ActionListener {
 		add(lblNewLabel);
 		
 		roleChoiceField = new JComboBox();
-		roleChoiceField.setModel(new DefaultComboBoxModel(new String[] {"Teacher", "Teacher Assistant", "Student"}));
+		Statement stmt;
+		String[] roleNames = new String[3];
+		int i=0;
+		try {
+			stmt = con.createStatement();
+			ResultSet rs=stmt.executeQuery("SELECT DISTINCT role FROM TestDB.dbo.roles");  
+			
+			while(rs.next()) { 
+				System.out.println("RS:"+rs.getString(1));
+				roleNames[i++] = rs.getString(1);
+			}
+			con.close();//not sure where to place this
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		//roleChoiceField.setModel(new DefaultComboBoxModel(new String[] {"Teacher", "Teacher Assistant", "Student"}));
+		roleChoiceField.setModel(new DefaultComboBoxModel(roleNames));
 		roleChoiceField.setBounds(200, 192, 130, 27);
 		add(roleChoiceField);
 		

@@ -34,7 +34,7 @@ public class WindowManager{
 	 * Create the application.
 	 */
 	public WindowManager() {
-		/*try{  //this should be placed at the very beginning of the application and should be performed only once for a run. 
+		try{  //this should be placed at the very beginning of the application and should be performed only once for a run. 
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");  
 			con=DriverManager.getConnection(  
 			"jdbc:sqlserver://projectdb.cpfuslnxnggh.us-east-1.rds.amazonaws.com:1433","admin","adminpassword");  
@@ -42,10 +42,7 @@ public class WindowManager{
 			
 			  
 			}catch(Exception e)
-				{ System.out.println(e);} */
-		
-				
-		
+				{ System.out.println(e);} 
 		initialize();
 		setUpLoginPage();
 		
@@ -78,13 +75,13 @@ public class WindowManager{
 		{
 			public void windowClosing(WindowEvent e)
 			{
-				/*try {
+				try {
 					if(con.isClosed() == false)
 						con.close();
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
-				}*/
+				}
 				
 				frmAdvanceddbproject.setVisible(false);
 				frmAdvanceddbproject.dispose();
