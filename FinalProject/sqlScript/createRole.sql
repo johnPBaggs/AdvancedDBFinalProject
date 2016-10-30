@@ -1,0 +1,21 @@
+USE [TestDB]
+GO
+
+/****** Object:  Table [dbo].[roles]    Script Date: 10/29/2016 8:20:32 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[roles](
+	[role] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_roles] PRIMARY KEY CLUSTERED 
+(
+	[role] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
