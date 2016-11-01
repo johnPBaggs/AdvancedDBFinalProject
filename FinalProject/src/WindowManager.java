@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 
@@ -106,5 +107,11 @@ public class WindowManager{
 		currentPanel = new JPanel();
 		
 	}
+	
+	public static void errorMessage(String error)
+	{
+		JOptionPane.showMessageDialog(new JFrame(), error);
+	}
+	
 
 }

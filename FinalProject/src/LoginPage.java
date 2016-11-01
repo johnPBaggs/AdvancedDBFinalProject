@@ -60,18 +60,20 @@ public class LoginPage extends JPanel implements ActionListener {
 	    try {
 	        cstmt = con.prepareCall(
 	                "{call testDB.dbo.verifyLogin(?,?,?,?)}");
-	        cstmt.registerOutParameter(1, java.sql.Types.INTEGER);
-	        cstmt.setNString(2, loginInformation[0]);
-	        cstmt.setNString(3, loginInformation[1]);
-	        cstmt.setNString(4, loginInformation[2]);
+	        cstmt.registerOutParameter(1, java.sql.Types.INTEGER); //ID That is being Recieved from SQL Procedure
+	        cstmt.setNString(2, loginInformation[0]); //Input 1: UserName
+	        cstmt.setNString(3, loginInformation[1]); //Input 2: Password
+	        cstmt.setNString(4, loginInformation[2]); //Input 3: Role
 	        cstmt.execute();
-	        id = cstmt.getInt(1);
-	    } catch (Exception ex) {System.out.println(ex);} 
+	        id = cstmt.getInt(1); //Gets the return value
+	    } catch (Exception ex) {System.out.println(ex);}
 	    System.out.println("id:"+id);
 	    if(id != -1){
 	    	if(loginInformation[2].equalsIgnoreCase("teacher"))
 	    		windowManager.setUpTeacherHomePage(id, this);
 	    }
+	    else
+	    	WindowManager.errorMessage("Login Failed");
 	    	
 	}
 
