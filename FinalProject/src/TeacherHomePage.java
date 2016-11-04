@@ -12,13 +12,15 @@ public class TeacherHomePage extends JPanel implements ActionListener {
 	private JButton addTestButton;
 	private JButton viewGradesButton;
 	private int teacherID;
+	private int courseID;
 	private WindowManager windowManager;
 	
 	/**
 	 * Create the panel.
 	 */
-	public TeacherHomePage(int newID, WindowManager manager) {
-		teacherID = newID;
+	public TeacherHomePage(int teacherID, int courseID, WindowManager manager) {
+		this.teacherID = teacherID;
+		this.courseID = courseID;
 		windowManager = manager;
 		initialize();
 

@@ -34,7 +34,6 @@ public class LoginPage extends JPanel implements ActionListener {
 	}
 	
 	public void actionPerformed(ActionEvent event) {	
-		System.out.println("button Pressed ");
 		if(event.getSource().equals(loginButton))
 		{
 			callLoginProcedure(getLoginInformation());
@@ -70,7 +69,7 @@ public class LoginPage extends JPanel implements ActionListener {
 	    System.out.println("id:"+id);
 	    if(id != -1){
 	    	if(loginInformation[2].equalsIgnoreCase("teacher"))
-	    		windowManager.setUpTeacherHomePage(id, this);
+	    		windowManager.setUpChooseCoursePage(id, loginInformation[2], this);
 	    }
 	    else
 	    	WindowManager.errorMessage("Login Failed");
@@ -82,7 +81,7 @@ public class LoginPage extends JPanel implements ActionListener {
 		array[0] = userNameField.getText();
 		array[1] = getPasswordString(passwordField.getPassword());
 		array[2] = roleChoiceField.getSelectedItem().toString();
-		System.out.println("userName = " + array[0] + "  password = " + array[1] + "   roleChoice = " + array[2]);
+		//System.out.println("userName = " + array[0] + "  password = " + array[1] + "   roleChoice = " + array[2]);
 		return array;
 	}
 	
@@ -113,7 +112,7 @@ public class LoginPage extends JPanel implements ActionListener {
 				System.out.println("RS:"+rs.getString(1));
 				roleNames[i++] = rs.getString(1);
 			}
-			con.close();//not sure where to place this
+			//con.close();//not sure where to place this
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

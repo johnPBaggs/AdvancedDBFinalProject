@@ -18,7 +18,7 @@ public class WindowManager{
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) { 
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -55,11 +55,20 @@ public class WindowManager{
 		frmAdvanceddbproject.getContentPane().add(currentPanel, BorderLayout.CENTER);
 	}
 	
-	public void setUpTeacherHomePage(int teacherID, JPanel currentPanel)
+	public void setUpChooseCoursePage(int ID, String role, JPanel currentPanel)
+	{
+		currentPanel.setVisible(false);
+		this.frmAdvanceddbproject.remove(currentPanel);
+		this.currentPanel = new SelectCoursePage(ID, role, this);
+		this.frmAdvanceddbproject.getContentPane().add(this.currentPanel, BorderLayout.CENTER);
+		
+	}
+	
+	public void setUpTeacherHomePage(int teacherID, int courseID, JPanel currentPanel)
 	{
 		currentPanel.setVisible(false);
 		frmAdvanceddbproject.remove(currentPanel);
-		this.currentPanel = new TeacherHomePage(teacherID, this);
+		this.currentPanel = new TeacherHomePage(teacherID, courseID, this);
 		frmAdvanceddbproject.getContentPane().add(this.currentPanel, BorderLayout.CENTER);
 		//set up new page
 		
