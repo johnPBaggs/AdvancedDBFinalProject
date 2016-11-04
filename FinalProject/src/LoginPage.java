@@ -69,13 +69,19 @@ public class LoginPage extends JPanel implements ActionListener {
 	    System.out.println("id:"+id);
 	    if(id != -1){
 	    	if(loginInformation[2].equalsIgnoreCase("teacher"))
-	    		windowManager.setUpChooseCoursePage(id, loginInformation[2], this);
+	    		windowManager.setUpNextPage(this, setUpChooseCoursePage(id, loginInformation[2]));;
 	    }
 	    else
 	    	WindowManager.errorMessage("Login Failed");
 	    	
 	}
 
+	
+	private SelectCoursePage setUpChooseCoursePage(int id, String role)
+	{
+		return new SelectCoursePage(id, role, this.windowManager, con);
+	}
+	
 	private String[] getLoginInformation() {
 		String[] array = new String[3];
 		array[0] = userNameField.getText();

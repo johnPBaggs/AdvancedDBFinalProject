@@ -55,23 +55,14 @@ public class WindowManager{
 		frmAdvanceddbproject.getContentPane().add(currentPanel, BorderLayout.CENTER);
 	}
 	
-	public void setUpChooseCoursePage(int ID, String role, JPanel currentPanel)
+	
+	
+	public void setUpNextPage(JPanel currentPanel, JPanel newPanel)
 	{
 		currentPanel.setVisible(false);
 		this.frmAdvanceddbproject.remove(currentPanel);
-		this.currentPanel = new SelectCoursePage(ID, role, this);
+		this.currentPanel = newPanel;
 		this.frmAdvanceddbproject.getContentPane().add(this.currentPanel, BorderLayout.CENTER);
-		
-	}
-	
-	public void setUpTeacherHomePage(int teacherID, int courseID, JPanel currentPanel)
-	{
-		currentPanel.setVisible(false);
-		frmAdvanceddbproject.remove(currentPanel);
-		this.currentPanel = new TeacherHomePage(teacherID, courseID, this);
-		frmAdvanceddbproject.getContentPane().add(this.currentPanel, BorderLayout.CENTER);
-		//set up new page
-		
 	}
 
 	/**

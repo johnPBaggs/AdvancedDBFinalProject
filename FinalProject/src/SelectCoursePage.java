@@ -3,6 +3,7 @@ import javax.swing.JComboBox;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -13,24 +14,29 @@ public class SelectCoursePage extends JPanel implements ActionListener {
 	private String[] courseNames;
 	private int[] courseIDs;
 	private int ID;
+	private String role;
 	private WindowManager windowManager;
+	private Connection con;
 	private JComboBox courseChoiceBox;
 	private JButton nextButton;
+	private JButton backButton;
 	
 	/**
 	 * Create the panel.
 	 */
-	public SelectCoursePage(int ID, String role, WindowManager manager) {
+	public SelectCoursePage(int ID, String role, WindowManager manager, Connection con) {
 		
 		this.ID = ID;
+		this.role = role;
 		this.windowManager = manager;
-		getCoursesInformation(role); //get arrays of Course information
+		this.con = con;
+		getCoursesInformation(); //get arrays of Course information
 		initThis();
 	}
 	
 	
 	
-	private void getCoursesInformation(String role) {
+	private void getCoursesInformation() {
 		//here call procedure to get the course information for each course;
 		//I recommend using an ArrayList to hold the values
 		
@@ -107,15 +113,37 @@ public class SelectCoursePage extends JPanel implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent event) {
 		
-		if(event.getSource().equals(nextButton))
+		if(event.getSource().equals(nextButton)) {
+			int arrayIndex = this.courseChoiceBox.getSelectedIndex();
+			System.out.println("arrayIndex = " + arrayIndex);
+			chooseRoleToSetUP(arrayIndex);
+		} else if(event.getSource().equals(backButton))
 		{
-			
-			
+			this.windowManager.setUpNextPage(this, new LoginPage(this.con, this.windowManager));
 		}
 		
 	}
 	
 	
+	private void chooseRoleToSetUP(int arrayIndex) {
+		JPanel newPanel = null;
+		if(this.role.equals("teacher")) {
+			newPanel = setUpTeacherHomePage(ID, this.courseIDs[arrayIndex]);
+		} else if(this.role.equals("teachingAssistant")) {
+			//this.windowManager.setUpTeacherAssistantHomePage(ID, this.courseIDs[arrayIndex], this);
+		} else {
+			//this.windowManager.setUpStudentHomePage(ID, this.courseIDs[arrayIndex], this);
+		}
+		this.windowManager.setUpNextPage(this, newPanel);
+	}
+	
+	private TeacherHomePage setUpTeacherHomePage(int ID, int courseID)
+	{
+		return new TeacherHomePage(ID, courseID, this.windowManager, con);
+	}
+
+
+
 	private void initThis()
 	{
 		setLayout(null);
@@ -128,5 +156,10 @@ public class SelectCoursePage extends JPanel implements ActionListener {
 		nextButton.setBounds(211, 235, 117, 29);
 		add(nextButton);
 		nextButton.addActionListener(this);
+		
+		backButton = new JButton("Back");
+		backButton.setBounds(6, 440, 117, 29);
+		add(backButton);
+		backButton.addActionListener(this);
 	}
 }
