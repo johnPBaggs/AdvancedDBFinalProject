@@ -17,15 +17,17 @@ public class TeacherHomePage extends JPanel implements ActionListener {
 	private int courseID;
 	private WindowManager windowManager;
 	private Connection con;
+	private JPanel lastPage;
 	
 	/**
 	 * Create the panel.
 	 */
-	public TeacherHomePage(int teacherID, int courseID, WindowManager manager, Connection con) {
+	public TeacherHomePage(int teacherID, int courseID, WindowManager manager, Connection con, JPanel lastPage) {
 		this.teacherID = teacherID;
 		this.courseID = courseID;
 		windowManager = manager;
 		this.con = con;
+		this.lastPage = lastPage;
 		initialize();
 
 	}
@@ -34,7 +36,7 @@ public class TeacherHomePage extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		
 		if(event.getSource().equals(changeQuestionButton)) {
-			this.windowManager.setUpNextPage(this, new TeacherAddOrModifyPage(this.teacherID, this.courseID, this.windowManager, this.con));
+			this.windowManager.setUpNextPage(this, new TeacherAddOrModifyPage(this.teacherID, this.courseID, this.windowManager, this.con, this));
 		}
 		else if(event.getSource().equals(addTestButton)) {
 			System.out.println("addTestButton");
@@ -42,7 +44,7 @@ public class TeacherHomePage extends JPanel implements ActionListener {
 		else if(event.getSource().equals(viewGradesButton)) {
 			System.out.println("viewGradesButton");
 		} else if(event.getSource().equals(backButton)) {
-			this.windowManager.setUpNextPage(this, new SelectCoursePage(teacherID, "teacher", this.windowManager, this.con));
+			this.windowManager.setUpNextPage(this, this.lastPage);
 		}
 		
 	}

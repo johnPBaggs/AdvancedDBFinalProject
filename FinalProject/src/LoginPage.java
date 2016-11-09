@@ -79,7 +79,7 @@ public class LoginPage extends JPanel implements ActionListener {
 	
 	private SelectCoursePage setUpChooseCoursePage(int id, String role)
 	{
-		return new SelectCoursePage(id, role, this.windowManager, con);
+		return new SelectCoursePage(id, role, this.windowManager, con, this);
 	}
 	
 	private String[] getLoginInformation() {

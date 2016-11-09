@@ -60,6 +60,7 @@ public class WindowManager{
 	public void setUpNextPage(JPanel currentPanel, JPanel newPanel)
 	{
 		currentPanel.setVisible(false);
+		newPanel.setVisible(true);
 		this.frmAdvanceddbproject.remove(currentPanel);
 		this.currentPanel = newPanel;
 		this.frmAdvanceddbproject.getContentPane().add(this.currentPanel, BorderLayout.CENTER);

@@ -24,21 +24,23 @@ public class TeacherAddOrModifyPage extends JPanel implements ActionListener{
 	private int teacherID;
 	private int courseID;
 	private String[] questionNames;
-	private JComboBox<String> allQuestionsBox;
+	private JComboBox allQuestionsBox;
 	private Map<String,Question> questions;
 	private JButton modifyButton;
 	private JButton addButton;
 	private JButton backButton;
+	private JPanel lastPage;
 
 	
 	/**
 	 * Create the panel.
 	 */
-	public TeacherAddOrModifyPage(int teacherID, int courseID, WindowManager manager, Connection con) {
+	public TeacherAddOrModifyPage(int teacherID, int courseID, WindowManager manager, Connection con, JPanel lastPage) {
 		this.teacherID = teacherID;
 		this.courseID = courseID;
 		this.windowManager = manager;
 		this.con = con;
+		this.lastPage = lastPage;
 		getQuestionsInformation();
 		initThis();
 
@@ -48,13 +50,25 @@ public class TeacherAddOrModifyPage extends JPanel implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent event) {
 		if(event.getSource().equals(modifyButton)) {
-			System.out.println("modifyButton");
+			String currentQuestion = (String)this.allQuestionsBox.getSelectedItem();
+			this.windowManager.setUpNextPage(this, new ModifyQuetionPage(questions.get(currentQuestion), this.windowManager, this.con, this));
 		} else if(event.getSource().equals(addButton)) {
-			System.out.println("addButton");
+			this.windowManager.setUpNextPage(this, new AddQuestionPage(this.windowManager, this.con, this));
 		} else if(event.getSource().equals(backButton)) {
-			this.windowManager.setUpNextPage(this, new TeacherHomePage(this.teacherID, this.courseID, this.windowManager, this.con));
+			this.windowManager.setUpNextPage(this, this.lastPage);
 		}
 		
+	}
+	
+	
+	public int getCourseID()
+	{
+		return this.courseID;
+	}
+	
+	public int getTeacherID()
+	{
+		return this.teacherID;
 	}
 	
 	private void getQuestionsInformation() {
@@ -133,7 +147,7 @@ public class TeacherAddOrModifyPage extends JPanel implements ActionListener{
 			questionNames[i++] = keys.next();
 		}
 		
-		allQuestionsBox = new JComboBox<String>(questionNames);
+		allQuestionsBox = new JComboBox(questionNames);
 		allQuestionsBox.setBounds(135, 149, 280, 27);
 		add(allQuestionsBox);
 		
@@ -156,7 +170,7 @@ public class TeacherAddOrModifyPage extends JPanel implements ActionListener{
 		add(lblAddNewQuestion);
 		
 		backButton = new JButton("Back");
-		backButton.setBounds(6, 440, 117, 29);
+		backButton.setBounds(6, 440, 116, 29);
 		add(backButton);
 		backButton.addActionListener(this);
 	}

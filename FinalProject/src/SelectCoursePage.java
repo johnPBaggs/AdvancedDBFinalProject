@@ -25,16 +25,18 @@ public class SelectCoursePage extends JPanel implements ActionListener {
 	private JComboBox courseChoiceBox;
 	private JButton nextButton;
 	private JButton backButton;
+	private JPanel lastPage;
 	
 	/**
 	 * Create the panel.
 	 */
-	public SelectCoursePage(int ID, String role, WindowManager manager, Connection con) {
+	public SelectCoursePage(int ID, String role, WindowManager manager, Connection con, JPanel lastPage) {
 		
 		this.ID = ID;
 		this.role = role;
 		this.windowManager = manager;
 		this.con = con;
+		this.lastPage = lastPage;
 		getCoursesInformation(); //get arrays of Course information
 		initThis();
 	}
@@ -156,7 +158,7 @@ public class SelectCoursePage extends JPanel implements ActionListener {
 			chooseRoleToSetUP(arrayIndex);
 		} else if(event.getSource().equals(backButton))
 		{
-			this.windowManager.setUpNextPage(this, new LoginPage(this.con, this.windowManager));
+			this.windowManager.setUpNextPage(this, this.lastPage);
 		}
 		
 	}
@@ -176,7 +178,7 @@ public class SelectCoursePage extends JPanel implements ActionListener {
 	
 	private TeacherHomePage setUpTeacherHomePage(int ID, int courseID)
 	{
-		return new TeacherHomePage(ID, courseID, this.windowManager, con);
+		return new TeacherHomePage(ID, courseID, this.windowManager, con, this);
 	}
 
 
