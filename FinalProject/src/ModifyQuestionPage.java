@@ -16,7 +16,7 @@ import java.sql.Statement;
 
 import javax.swing.DefaultComboBoxModel;
 
-public class ModifyQuetionPage extends JPanel implements ActionListener{
+public class ModifyQuestionPage extends JPanel implements ActionListener{
 	private JTextField questionField;
 	private JTextField option1Field;
 	private JTextField option2Field;
@@ -35,7 +35,7 @@ public class ModifyQuetionPage extends JPanel implements ActionListener{
 	/**
 	 * Create the panel.
 	 */
-	public ModifyQuetionPage(Question question, WindowManager manager, Connection con, TeacherAddOrModifyPage  lastPage) 
+	public ModifyQuestionPage(Question question, WindowManager manager, Connection con, TeacherAddOrModifyPage  lastPage) 
 	{
 		this.question = question;
 		this.windowManager = manager;

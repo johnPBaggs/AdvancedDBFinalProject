@@ -51,7 +51,7 @@ public class TeacherAddOrModifyPage extends JPanel implements ActionListener{
 	public void actionPerformed(ActionEvent event) {
 		if(event.getSource().equals(modifyButton)) {
 			String currentQuestion = (String)this.allQuestionsBox.getSelectedItem();
-			this.windowManager.setUpNextPage(this, new ModifyQuetionPage(questions.get(currentQuestion), this.windowManager, this.con, this));
+			this.windowManager.setUpNextPage(this, new ModifyQuestionPage(questions.get(currentQuestion), this.windowManager, this.con, this));
 		} else if(event.getSource().equals(addButton)) {
 			this.windowManager.setUpNextPage(this, new AddQuestionPage(this.windowManager, this.con, this));
 		} else if(event.getSource().equals(backButton)) {
