@@ -58,7 +58,7 @@ public class LoginPage extends JPanel implements ActionListener {
 	 
 	    try {
 	        cstmt = con.prepareCall(
-	                "{call testDB.dbo.verifyLogin(?,?,?,?)}");
+	                "{call TestDB.dbo.verifyLogin(?,?,?,?)}");
 	        cstmt.registerOutParameter(1, java.sql.Types.INTEGER); //ID That is being Recieved from SQL Procedure
 	        cstmt.setNString(2, loginInformation[0]); //Input 1: UserName
 	        cstmt.setNString(3, loginInformation[1]); //Input 2: Password
@@ -118,7 +118,6 @@ public class LoginPage extends JPanel implements ActionListener {
 				System.out.println("RS:"+rs.getString(1));
 				roleNames[i++] = rs.getString(1);
 			}
-			//con.close();//not sure where to place this
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

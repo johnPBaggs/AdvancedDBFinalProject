@@ -1,11 +1,19 @@
 import javax.swing.JPanel;
+
+
+import dbo.Question;
+
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.util.ArrayList;
+import java.sql.ResultSet;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 import javax.swing.JButton;
 
@@ -15,9 +23,9 @@ public class TeacherAddOrModifyPage extends JPanel implements ActionListener{
 	private WindowManager windowManager;
 	private int teacherID;
 	private int courseID;
-	private int[] questionIDs;
 	private String[] questionNames;
 	private JComboBox<String> allQuestionsBox;
+	private Map<String,Question> questions;
 	private JButton modifyButton;
 	private JButton addButton;
 	private JButton backButton;
@@ -53,7 +61,44 @@ public class TeacherAddOrModifyPage extends JPanel implements ActionListener{
 		/* use the procedure to get all the questions
 		 * I would use an arrayList just like in the getCourseInformation
 		 */
-		ArrayList<String> list = new ArrayList<String>();
+		CallableStatement cstmt = null;
+		 ResultSet rs = null;
+		 questions = new HashMap<String,Question>();
+		  
+		 try {
+		        cstmt = con.prepareCall("{call TestDB.dbo.getCourseQuestions(?)}",
+		                ResultSet.TYPE_SCROLL_INSENSITIVE,
+		                ResultSet.CONCUR_READ_ONLY);
+		 
+		        cstmt.setInt(1, courseID);
+		        boolean results = cstmt.execute();
+		        int rowsAffected = 0;
+		 
+		        // Protects against lack of SET NOCOUNT in stored prodedure
+		        while (results || rowsAffected != -1) {
+		            if (results) {
+		                rs = cstmt.getResultSet();
+		                break;
+		            } else {
+		                rowsAffected = cstmt.getUpdateCount();
+		            }
+		            results = cstmt.getMoreResults();
+		        }
+		 
+		        while (rs.next()) {
+		            Question question = new Question(rs.getString("questionId"),
+		            		rs.getString("question"),
+		            		rs.getString("optionA"),
+		            		rs.getString("optionB"),
+		            		rs.getString("optionC"),
+		            		rs.getString("optionD"),
+		            		rs.getString("answer"));
+		            questions.put(question.getQuestion(), question);
+		        }
+		    } catch (Exception ex) {
+		    	System.err.println(ex.toString());
+		    }
+		/*ArrayList<String> list = new ArrayList<String>();
 		list.add("What is 2 + 2");
 		list.add("12354");
 		list.add("At what tempurature does water turn into a gas");
@@ -71,7 +116,7 @@ public class TeacherAddOrModifyPage extends JPanel implements ActionListener{
 		for(int count = 0, counter = 0; count < size; count++) {
 			this.questionNames[count] = list.get(counter++);
 			this.questionIDs[count] = Integer.parseInt(list.get(counter++));
-		}
+		}*/
 		
 	}
 
@@ -80,8 +125,15 @@ public class TeacherAddOrModifyPage extends JPanel implements ActionListener{
 	private void initThis()
 	{
 		setLayout(null);
+		int i=0;
+		questionNames = new String[questions.size()];
+		Iterator<String> keys = questions.keySet().iterator(); 
 		
-		 allQuestionsBox = new JComboBox<String>(questionNames);
+		while(keys.hasNext()){
+			questionNames[i++] = keys.next();
+		}
+		
+		allQuestionsBox = new JComboBox<String>(questionNames);
 		allQuestionsBox.setBounds(135, 149, 280, 27);
 		add(allQuestionsBox);
 		
