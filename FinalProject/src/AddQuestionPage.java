@@ -46,7 +46,7 @@ public class AddQuestionPage extends JPanel implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent event) {
 		if(event.getSource().equals(submitButton)){
-			StringBuilder insertStmt = new StringBuilder("INSERT INTO [TestDB].[dbo].question([questionId],[question],[optionA],[optionB],[optionC],[optionD],[answer],[courseId]) VALUES(next value for [TestDB].[dbo].[questionIds]");
+			StringBuilder insertStmt = new StringBuilder("INSERT INTO [TestDB].[dbo].[question]([questionId],[question],[optionA],[optionB],[optionC],[optionD],[answer],[courseId]) VALUES(next value for [TestDB].[dbo].[questionIds]");
 
 			insertStmt.append(",'"+this.questionField.getText());
 			insertStmt.append("','"+this.option1Field.getText());

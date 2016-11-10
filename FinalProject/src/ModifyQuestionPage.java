@@ -48,7 +48,7 @@ public class ModifyQuestionPage extends JPanel implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent event) {
 		if(event.getSource().equals(submitButton)){
-			StringBuilder updateStmt = new StringBuilder("update [TestDB].[dbo].question set ");
+			StringBuilder updateStmt = new StringBuilder("update [TestDB].[dbo].[question] set ");
 			updateStmt.append("[question] = '" + this.questionField.getText());
 			updateStmt.append("',[optionA] = '" + this.option1Field.getText());
 			updateStmt.append("',[optionB] = '" + this.option2Field.getText());

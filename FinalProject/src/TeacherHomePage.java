@@ -39,7 +39,7 @@ public class TeacherHomePage extends JPanel implements ActionListener {
 			this.windowManager.setUpNextPage(this, new TeacherAddOrModifyPage(this.teacherID, this.courseID, this.windowManager, this.con, this));
 		}
 		else if(event.getSource().equals(addTestButton)) {
-			System.out.println("addTestButton");
+			this.windowManager.setUpNextPage(this, new AddTestPage(this.courseID, this.windowManager, this.con, this));
 		}
 		else if(event.getSource().equals(viewGradesButton)) {
 			System.out.println("viewGradesButton");
