@@ -66,6 +66,7 @@ public class ModifyQuestionPage extends JPanel implements ActionListener{
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
+			this.windowManager.setUpNextPage(this, this.lastPage);
 		} else if(event.getSource().equals(backButton))
 		{
 			this.windowManager.setUpNextPage(this, this.lastPage);
