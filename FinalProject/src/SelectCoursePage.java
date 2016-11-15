@@ -51,14 +51,6 @@ public class SelectCoursePage extends JPanel implements ActionListener {
 		//getCoursesTeacher
 		//getCoursesTeacherAssistant
 		//getCoursesStudent
-		//ArrayList<Course> list = new ArrayList<Course>();
-		/*list.add("Intro to C");
-		list.add("12435");
-		list.add("Data Structures and Algorithms I");
-		list.add("43223");
-		list.add("Programming Languages");
-		list.add("12425");
-		System.out.println(list.size());*/
 		String callStmt = new String(); 
 		if(role.equalsIgnoreCase("Teacher")) {
 			callStmt = "{call TestDB.dbo.getCoursesThought(?)}";
@@ -101,15 +93,6 @@ public class SelectCoursePage extends JPanel implements ActionListener {
 		    } catch (Exception ex) {
 		    	System.err.println(ex.toString());
 		    }
-		/*int size = list.size();
-		this.courseNames = new String[size / 2];
-		this.courseIDs = new int[size / 2];
-		for(int count = 0, counter = 0; count < size / 2; count++) {
-			
-			courseNames[count] = list.get(counter++);
-			courseIDs[count] = Integer.parseInt(list.get(counter++));
-		}*/
-			
 		
 	}
 
@@ -135,20 +118,6 @@ public class SelectCoursePage extends JPanel implements ActionListener {
 
 
 
-	private ArrayList<String> dummyFunction() {
-		ArrayList<String> list = new ArrayList<String>();
-		list.add("Intro to C");
-		list.add("12435");
-		list.add("Data Structures and Algorithms I");
-		list.add("43223");
-		list.add("Programming Languages");
-		list.add("12425");
-		return list;
-		
-	}
-
-
-
 	@Override
 	public void actionPerformed(ActionEvent event) {
 		
@@ -171,7 +140,7 @@ public class SelectCoursePage extends JPanel implements ActionListener {
 		} else if(this.role.equals("teachingAssistant")) {
 			//this.windowManager.setUpTeacherAssistantHomePage(ID, this.courseIDs[arrayIndex], this);
 		} else {
-			//this.windowManager.setUpStudentHomePage(ID, this.courseIDs[arrayIndex], this);
+			newPanel = new StudentHomePage(ID, this.courseList.get(arrayIndex).getCourseId(), this.windowManager, this.con, this);
 		}
 		this.windowManager.setUpNextPage(this, newPanel);
 	}

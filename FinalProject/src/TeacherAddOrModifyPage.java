@@ -112,26 +112,6 @@ public class TeacherAddOrModifyPage extends JPanel implements ActionListener{
 		    } catch (Exception ex) {
 		    	System.err.println(ex.toString());
 		    }
-		/*ArrayList<String> list = new ArrayList<String>();
-		list.add("What is 2 + 2");
-		list.add("12354");
-		list.add("At what tempurature does water turn into a gas");
-		list.add("12311");
-		list.add("When did world war II end");
-		list.add("19420");
-		list.add("What is our star called");
-		list.add("12316");
-		
-		int size = list.size() / 2;
-		
-		this.questionNames = new String[size];
-		this.questionIDs = new int[size];
-		
-		for(int count = 0, counter = 0; count < size; count++) {
-			this.questionNames[count] = list.get(counter++);
-			this.questionIDs[count] = Integer.parseInt(list.get(counter++));
-		}*/
-		
 	}
 
 	

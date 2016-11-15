@@ -67,8 +67,7 @@ public class LoginPage extends JPanel implements ActionListener {
 	        id = cstmt.getInt(1); //Gets the return value
 	    } catch (Exception ex) {System.out.println(ex);}
 	    System.out.println("id:"+id);
-	    if(id != -1){
-	    	if(loginInformation[2].equalsIgnoreCase("teacher"))
+	    if(id != 0){
 	    		windowManager.setUpNextPage(this, setUpChooseCoursePage(id, loginInformation[2]));;
 	    }
 	    else
