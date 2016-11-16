@@ -101,6 +101,7 @@ public class StudentViewGradePage extends JPanel implements ActionListener{
 		backButton = new JButton("Back");
 		backButton.setBounds(6, 440, 117, 29);
 		add(backButton);
+		backButton.addActionListener(this);
 	}
 
 

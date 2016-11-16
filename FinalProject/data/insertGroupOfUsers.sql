@@ -1,0 +1,332 @@
+USE [TestDB]
+
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('usha'
+		,'usha'
+		,'student'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('acon'
+		,'acon'
+		,'student'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('adam'
+		,'adam'
+		,'student'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('adrian'
+		,'adrian'
+		,'student'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('aeriel'
+		,'aeriel'
+		,'student'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('aigan'
+		,'aigan'
+		,'student'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('nikki'
+		,'nikki'
+		,'student'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('alex'
+		,'alex'
+		,'student'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('pinto'
+		,'pinto'
+		,'teacher'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('albert'
+		,'albert'
+		,'teacher'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('alberto'
+		,'alberto'
+		,'teacher'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('alice'
+		,'alice'
+		,'teacher'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('amanda'
+		,'amanda'
+		,'student'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('barron'
+		,'barron'
+		,'student'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('bella'
+		,'bella'
+		,'student'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('ben'
+		,'ben'
+		,'teacher'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('david'
+		,'david'
+		,'student'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('dallas'
+		,'dallas'
+		,'teacher'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('parker'
+		,'parker'
+		,'student'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('parley'
+		,'parley'
+		,'student'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('paterson'
+		,'paterson'
+		,'student'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('paul'
+		,'paul'
+		,'student'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('penelope'
+		,'penelope'
+		,'student'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('sabastian'
+		,'sabastian'
+		,'student'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('sammantha'
+		,'sammantha'
+		,'student'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('taylor'
+		,'taylor'
+		,'student'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('lary'
+		,'lary'
+		,'student'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('laureena'
+		,'laureena'
+		,'student'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('victor'
+		,'victor'
+		,'student'
+		)
+GO
+INSERT INTO [dbo].[user]
+		([userName]
+		,[password]
+		,[role]
+		)
+	VALUES
+		('zara'
+		,'zara'
+		,'student'
+		)
