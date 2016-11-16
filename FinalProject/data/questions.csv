@@ -1,57 +1,56 @@
-question,optionA,optionB,optionC,optionD,answer,courseId
-Jim drove 768 miles of a 1200 miles journey. How many more miles does he need to drive to finish his journey?,560,432,440,222,B
-There are 123 boxes of sweets in a store. There are 25 sweets in each box. How many sweets are in the store?,123,25,3075,148,C
-There are 365 days in one year, and 100 years in one century. How many days are in one century?,30,1000,3650,36500,D
-If Logx (1 / 8) = - 3 / 2, then x is equal to,- 4,4,1/4,10,B
-20 % of 2 is equal to,20,4,0.4,0.04,C
-If Log 4 (x) = 12, then log 2 (x / 4) is equal to,11,48,-12,22,D
-If f(x) is an odd function, then | f(x) | is,an odd function,an even function,neither odd nor even,even and odd,B
-The period of | sin (3x) | is,2pi,2pi/3,pi/3,3pi,C
-The period of 2 sin x cos x is,4 pi 2,2 pi,4 pi,pi,D
-If y(x-1)=z then x=,y-z,z/y + 1,y(z-1),z(y-1),B
-Which of the following values is NOT equal to 34(58+9)?,34 x 67,58(34+9),34 x 58 + 34 x 9,1972 + 306,B
-Two angles of a triangle measure 15° and 85 °. What is the measure for the third angle?,50°,55°,60°,80°,D
-If 5 ounces is equal to 140 grams, then 2 pounds of ground meat is equal to how many grams?,863,878,896,915,C
-Which of the following is equal to 5.93 x 10-2?,0.0593,0.00593,593,5930,A
-Which of the following fractions is equal to 5/6?,20/30,15/24,25/30,40/54,C
-If 3x=6x-15 then x + 8=,5,10,11,13,D
-The number of milliliters in 1 liter is,10000,1000,0.1,0.01,B
-What is 1/9 of 9?,1/9,0,1,2,C
-Which fraction is equal to 0.20%?,1/20,1/40,1/500,1/400,C
-Find the missing term in the following sequence: 4 9 19 __ 79,36,37,38,39,D
-Of the following fractions, which is less than 2/3?,7/8,5/6,3/4,3/5,D
-A hockey team won 6 games and lost 8. What is the ratio of wins to number of games?,6/8,8/6,3/7,8/14,C
-6.334 x 104 =,0.0006334,0.06334,6334,63340,D
-If 3x + 5x = -8, then x + 1 =,-2,-1,0,1,C
-Two angle in a triangle equal 120°. What is the measure of the third angle?,60°,70°,80°,90°,A
-Which of the following is a non metal that remains liquid at room temperature?,Phosphorous,Bromine,Chlorine,Helium,B
-Chlorophyll is a naturally occurring chelate compound in which central metal is,copper,magnesium,iron,calcium,B	
-Which of the following is used in pencils?,Graphite,Silicon,Charcoal,Phosphorous,A
-Which of the following metals forms an amalgam with other metals?,Tin,Mercury,Lead,Zinc,B
-Chemical formula for water is,NaAlO2,H2O,Al2O3,CaSiO3,B
-The gas usually filled in the electric bulb is,nitrogen,hydrogen,carbon dioxide,oxygen,A
-Washing soda is the common name for,Sodium carbonate,Calcium bicarbonate,Sodium bicarbonate,Calcium carbonate,A
-Quartz crystals normally used in quartz clocks etc. is chemically,silicon dioxide,germanium oxide,a mixture of germanium oxide and silicon dioxide,sodium silicate,A
-Which of the gas is not known as green house gas?,Methane,Nitrous oxide,Carbon dioxide,Hydrogen,D
-Bromine is a,black solid,red liquid,colourless gas,highly inflammable gas,B
-The hardest substance available on earth is,Gold,Iron,Diamond,Platinum,C
-The variety of coal in which the deposit contains recognisable traces of the original plant material is,bitumen,anthracite,lignite,peat,D
-Which of the following is used as a lubricant?,Graphite,Silica,Iron Oxide,Diamond,A
-The inert gas which is substituted for nitrogen in the air used by deep sea divers for breathing is,Argon,Xenon,Helium,Krypton,C
-The gases used in different types of welding would include,oxygen and hydrogen,oxygen hydrogen acetylene and nitrogen,oxygen acetylene and argon,oxygen and acetylene,D
-The property of a substance to absorb moisture from the air on exposure is called,osmosis,deliquescence,efflorescence,desiccation,B
-In which of the following activities silicon carbide is used?,Making cement and glass,Disinfecting water of ponds,cutting very hard substances,Making casts for statues,C	
-When an iron nail gets rusted iron oxide is formed,without any change in the weight of the nail,with decrease in the weight of the nail,with increase in the weight of the nail,without any change in colour or weight of the nail,C
-Galvanised iron sheets have a coating of,lead,chromium,zinc,tin,C
-Among the various allotropes of carbon,,coke is the hardest & graphite is the softest,diamond is the hardest & coke is the softest,diamond is the hardest & graphite is the softest,diamond is the hardest & lamp black is the softest,C
-The element common to all acids is,hydrogen,carbon,sulphur,oxygen,A
-Non stick cooking utensils are coated with,Teflon,PVC,black paint,polystyrene,A
-Potassium nitrate is used in,medicine,fertiliser,salt,glass,B
-Permanent hardness of water may be removed by the addition of,sodium carbonate,alum,potassium permanganate,lime,A
-Soda water contains,carbonic acid,sulphuric acid,carbon dioxide,nitrous acid,C
-The most important ore of aluminium is,galena,calamine,calcite,bauxite,D
-Sodium metal is kept under,petrol,alcohol,water,kerosene,D
-What is laughing gas?,Nitrous Oxide,Carbon monoxide,Sulphur dioxide,Hydrogen peroxide,A
-In fireworks, the green flame is produced because of,sodium,barium,mercury,potassium,B
-Marsh gas is,nitrogen,ethane,methane,hydrogen,C
-Air is a/an,compound,element,electrolyte,mixture,D
+Jim drove 768 miles of a 1200 miles journey. How many more miles does he need to drive to finish his journey?,560,432,440,222,B,1006
+There are 123 boxes of sweets in a store. There are 25 sweets in each box. How many sweets are in the store?,123,25,3075,148,C,1006
+There are 365 days in one year, and 100 years in one century. How many days are in one century?,30,1000,3650,36500,D,1006
+If Logx (1 / 8) = - 3 / 2, then x is equal to,- 4,4,1/4,10,B,1006
+20 % of 2 is equal to,20,4,0.4,0.04,C,1006
+If Log 4 (x) = 12, then log 2 (x / 4) is equal to,11,48,-12,22,D,1006
+If f(x) is an odd function, then | f(x) | is,an odd function,an even function,neither odd nor even,even and odd,B,1006
+The period of | sin (3x) | is,2pi,2pi/3,pi/3,3pi,C,1006
+The period of 2 sin x cos x is,4 pi 2,2 pi,4 pi,pi,D,1006
+If y(x-1)=z then x=,y-z,z/y + 1,y(z-1),z(y-1),B,1006
+Which of the following values is NOT equal to 34(58+9)?,34 x 67,58(34+9),34 x 58 + 34 x 9,1972 + 306,B,1006
+Two angles of a triangle measure 15° and 85 °. What is the measure for the third angle?,50°,55°,60°,80°,D,1006
+If 5 ounces is equal to 140 grams, then 2 pounds of ground meat is equal to how many grams?,863,878,896,915,C,1006
+Which of the following is equal to 5.93 x 10-2?,0.0593,0.00593,593,5930,A,1006
+Which of the following fractions is equal to 5/6?,20/30,15/24,25/30,40/54,C,1006
+If 3x=6x-15 then x + 8=,5,10,11,13,D,1006
+The number of milliliters in 1 liter is,10000,1000,0.1,0.01,B,1006
+What is 1/9 of 9?,1/9,0,1,2,C,1006
+Which fraction is equal to 0.20%?,1/20,1/40,1/500,1/400,C,,1006
+Find the missing term in the following sequence: 4 9 19 __ 79,36,37,38,39,D,1006
+Of the following fractions, which is less than 2/3?,7/8,5/6,3/4,3/5,D,1006
+A hockey team won 6 games and lost 8. What is the ratio of wins to number of games?,6/8,8/6,3/7,8/14,C,1006
+6.334 x 104 =,0.0006334,0.06334,6334,63340,D,1006
+If 3x + 5x = -8, then x + 1 =,-2,-1,0,1,C,1006
+Two angle in a triangle equal 120°. What is the measure of the third angle?,60°,70°,80°,90°,A,1006
+Which of the following is a non metal that remains liquid at room temperature?,Phosphorous,Bromine,Chlorine,Helium,B,1007
+Chlorophyll is a naturally occurring chelate compound in which central metal is,copper,magnesium,iron,calcium,B,1007
+Which of the following is used in pencils?,Graphite,Silicon,Charcoal,Phosphorous,A,1007
+Which of the following metals forms an amalgam with other metals?,Tin,Mercury,Lead,Zinc,B,1007
+Chemical formula for water is,NaAlO2,H2O,Al2O3,CaSiO3,B,1007
+The gas usually filled in the electric bulb is,nitrogen,hydrogen,carbon dioxide,oxygen,A,1007
+Washing soda is the common name for,Sodium carbonate,Calcium bicarbonate,Sodium bicarbonate,Calcium carbonate,A,1007
+Quartz crystals normally used in quartz clocks etc. is chemically,silicon dioxide,germanium oxide,a mixture of germanium oxide and silicon dioxide,sodium silicate,A,1007
+Which of the gas is not known as green house gas?,Methane,Nitrous oxide,Carbon dioxide,Hydrogen,D,1007
+Bromine is a,black solid,red liquid,colourless gas,highly inflammable gas,B,1007
+The hardest substance available on earth is,Gold,Iron,Diamond,Platinum,C,1007
+The variety of coal in which the deposit contains recognisable traces of the original plant material is,bitumen,anthracite,lignite,peat,D,1007
+Which of the following is used as a lubricant?,Graphite,Silica,Iron Oxide,Diamond,A,1007
+The inert gas which is substituted for nitrogen in the air used by deep sea divers for breathing is,Argon,Xenon,Helium,Krypton,C,1007
+The gases used in different types of welding would include,oxygen and hydrogen,oxygen hydrogen acetylene and nitrogen,oxygen acetylene and argon,oxygen and acetylene,D,1007
+The property of a substance to absorb moisture from the air on exposure is called,osmosis,deliquescence,efflorescence,desiccation,B,1007
+In which of the following activities silicon carbide is used?,Making cement and glass,Disinfecting water of ponds,cutting very hard substances,Making casts for statues,C,1007
+When an iron nail gets rusted iron oxide is formed,without any change in the weight of the nail,with decrease in the weight of the nail,with increase in the weight of the nail,without any change in colour or weight of the nail,C,1007
+Galvanised iron sheets have a coating of,lead,chromium,zinc,tin,C,1007
+Among the various allotropes of carbon,,coke is the hardest & graphite is the softest,diamond is the hardest & coke is the softest,diamond is the hardest & graphite is the softest,diamond is the hardest & lamp black is the softest,C,1007
+The element common to all acids is,hydrogen,carbon,sulphur,oxygen,A,1007
+Non stick cooking utensils are coated with,Teflon,PVC,black paint,polystyrene,A,1007
+Potassium nitrate is used in,medicine,fertiliser,salt,glass,B,1007
+Permanent hardness of water may be removed by the addition of,sodium carbonate,alum,potassium permanganate,lime,A,1007
+Soda water contains,carbonic acid,sulphuric acid,carbon dioxide,nitrous acid,C,1007
+The most important ore of aluminium is,galena,calamine,calcite,bauxite,D,1007
+Sodium metal is kept under,petrol,alcohol,water,kerosene,D,1007
+What is laughing gas?,Nitrous Oxide,Carbon monoxide,Sulphur dioxide,Hydrogen peroxide,A,1007
+In fireworks, the green flame is produced because of,sodium,barium,mercury,potassium,B,1007
+Marsh gas is,nitrogen,ethane,methane,hydrogen,C,1007
+Air is a/an,compound,element,electrolyte,mixture,D,1007
