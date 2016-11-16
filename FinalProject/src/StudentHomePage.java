@@ -92,7 +92,7 @@ public class StudentHomePage extends JPanel implements ActionListener{
 			this.windowManager.setUpNextPage(this, new studentTakeTestpage(this.testToTake.get(this.comboBox.getSelectedItem()),
 					this.studentID, this.windowManager, this.con, this));
 		} else if(event.getSource().equals(this.viewGradesButton)) {
-			//this.windowManager.setUpNextPage(this, new AddTestPage(this.courseID, this.windowManager, this.con, this));
+			this.windowManager.setUpNextPage(this, new StudentViewGradePage(this.studentID, this.courseID, this.windowManager, this.con, this));
 		} else if(event.getSource().equals(backButton)) {
 			this.windowManager.setUpNextPage(this, this.lastPage);
 		}
