@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
 
 public class TeacherTestGradesPanel extends JPanel {
 	private JTextField testNameField;
@@ -40,6 +41,7 @@ public class TeacherTestGradesPanel extends JPanel {
 		testNameField.setColumns(500);
 		
 		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollPane.setBounds(6, 32, 538, 262);
 		add(scrollPane);
 		

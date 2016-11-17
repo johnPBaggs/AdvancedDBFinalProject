@@ -1,6 +1,9 @@
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JScrollPane;
+
+import dbo.Test;
+
 import java.awt.GridLayout;
 import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
@@ -11,6 +14,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
+import javax.swing.ScrollPaneConstants;
 
 public class TeacherViewGradePage extends JPanel implements ActionListener{
 
@@ -58,7 +63,7 @@ public class TeacherViewGradePage extends JPanel implements ActionListener{
 		 {
 			 ArrayList<TeacherOneStudentGradePanel> tempArrayList = new ArrayList<TeacherOneStudentGradePanel>();
 			 try {
-				 cstmt = con.prepareCall("{call TestDB.dbo.getStudentGrades(?, ?)}",
+				 cstmt = con.prepareCall("{call TestDB.dbo.getAllStudentGrades(?, ?)}",
 						 ResultSet.TYPE_SCROLL_INSENSITIVE,
 						 ResultSet.CONCUR_READ_ONLY);
 		 
@@ -80,7 +85,7 @@ public class TeacherViewGradePage extends JPanel implements ActionListener{
 		 
 				 while (rs.next()) {
 					 tempArrayList.add(new TeacherOneStudentGradePanel(rs.getString("studentName"),
-							 rs.getString("grade")));
+							 rs.getString("grade").trim()));
 				 }
 				 this.testGradesPanels[count] = new TeacherTestGradesPanel(getTestName(testIDs.get(count)), tempArrayList);
 			 } catch (Exception ex) {
@@ -96,8 +101,10 @@ public class TeacherViewGradePage extends JPanel implements ActionListener{
 		Statement stmt;
 		try {
 			stmt = con.createStatement();
-			ResultSet rs=stmt.executeQuery("SELECT testName FROM TestDB.dbo.test WHERE testId = " + testID.intValue());  
-			tempString = rs.getString(1);
+			String query = "SELECT [testName] FROM [TestDB].[dbo].[test] WHERE [testId] = " + testID.intValue();
+			ResultSet rs=stmt.executeQuery(query);
+			if(rs.next())
+				tempString = rs.getString(1);
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -112,8 +119,36 @@ public class TeacherViewGradePage extends JPanel implements ActionListener{
 
 	private ArrayList<Integer> getAllTestIDs() {
 		ArrayList<Integer> tempArrayList = new ArrayList<Integer>();
-		
-		
+		CallableStatement cstmt = null;
+		 ResultSet rs = null;
+
+		  
+		 try {
+		        cstmt = con.prepareCall("{call TestDB.dbo.getTestIds(?)}",
+		                ResultSet.TYPE_SCROLL_INSENSITIVE,
+		                ResultSet.CONCUR_READ_ONLY);
+		        System.out.println("courseId = "+courseID);
+		        cstmt.setInt(1, this.courseID);
+		        boolean results = cstmt.execute();
+		        int rowsAffected = 0;
+		 
+		        // Protects against lack of SET NOCOUNT in stored prodedure
+		        while (results || rowsAffected != -1) {
+		            if (results) {
+		                rs = cstmt.getResultSet();
+		                break;
+		            } else {
+		                rowsAffected = cstmt.getUpdateCount();
+		            }
+		            results = cstmt.getMoreResults();
+		        }
+		 
+		        while (rs.next()) {
+		        	tempArrayList.add(Integer.parseInt(rs.getString("testId")));
+		        }
+		    } catch (Exception ex) {
+		    	System.err.println(ex.toString());
+		    }
 		return tempArrayList;
 	}
 
@@ -132,6 +167,7 @@ public class TeacherViewGradePage extends JPanel implements ActionListener{
 		
 		
 		scrollPane = new JScrollPane();
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollPane.setBounds(6, 6, 538, 422);
 		add(scrollPane);
 		
